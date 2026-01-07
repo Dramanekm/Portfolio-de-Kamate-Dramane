@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Kamate Dramane</title>
+
+  <style>
+  :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: #020617;
+      --accent: #f97316;
+      --accent-soft: rgba(249,115,22,0.12);
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-soft: #1f2937;
+      --shadow-soft: 0 22px 45px rgba(0,0,0,0.65);
+  }
+
+  * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+  }
+
+  body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      display: flex;
+      min-height: 100vh;
+  }
+
+  /* BARRE LATERALE */
+
+  header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 100vh;
+      padding: 1.8rem 1.3rem;
+      background: linear-gradient(180deg,#020617,#020617 55%,#111827);
+      border-right: 1px solid #1f2937;
+      box-shadow: 16px 0 40px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      z-index: 1000;
+  }
+
+  header h1 {
+      font-size: 1.6rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-align: left;
+      margin: 0;
+  }
+
+  header h1 span {
+      color: var(--accent);
+  }
+
+  .side-intro {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+  }
+
+  .side-intro strong {
+      color: var(--text-main);
+  }
+
+  nav {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 0.4rem;
+  }
+
+  nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+  }
+
+  nav a {
+      display: block;
+      padding: 0.5rem 0.7rem;
+      border-radius: 0.6rem;
+      text-decoration: none;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+  }
+
+  nav a:hover,
+  nav a:focus {
+      color: var(--text-main);
+      background: var(--accent-soft);
+      border-color: rgba(249,115,22,0.5);
+      transform: translateX(3px);
+  }
+
+  nav a span {
+      margin-right: 0.35rem;
+  }
+
+  .side-footer {
+      font-size: 0.75rem;
+      color: #6b7280;
+  }
+
+  /* CONTENU PRINCIPAL */
+
+  main {
+      margin-left: 260px;
+      padding: 2.5rem 5vw 3rem;
+      max-width: 1200px;
+      width: 100%;
+  }
+
+  .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+  }
+
+  .hero-card {
+      background: linear-gradient(145deg, #020617, #020617 60%, #0b1120);
+      border-radius: 1.4rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 1.8rem 2rem;
+  }
+
+  .hero-card h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.5rem;
+  }
+
+  .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.2);
+      font-size: 0.8rem;
+      color: #bfdbfe;
+      margin-bottom: 0.7rem;
+  }
+
+  .hero-highlight {
+      color: var(--accent);
+      font-weight: 600;
+  }
+
+  .hero p {
+      margin: 0.3rem 0;
+      color: var(--text-soft);
+  }
+
+  .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+      margin-top: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+  }
+
+  .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+  }
+
+  .hero-meta span strong {
+      color: var(--text-main);
+  }
+
+  .hero-card-bis {
+      background: radial-gradient(circle at top,#1d283a 0,#020617 55%);
+      border-radius: 1.4rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 1.5rem 1.7rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+  }
+
+  .hero-card-bis h3 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1.05rem;
+  }
+
+  .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+  }
+
+  .chip {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid #1e293b;
+      background: rgba(15,23,42,0.9);
+      font-size: 0.8rem;
+      color: var(--text-main);
+  }
+
+  /* SECTIONS GENERIQUES */
+
+  section {
+      margin-bottom: 2.2rem;
+  }
+
+  section .card {
+      background: radial-gradient(circle at top left,#111827 0,#020617 45%,#020617 100%);
+      border-radius: 1.2rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 1.6rem 1.9rem;
+  }
+
+  section h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: relative;
+  }
+
+  section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 70px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg,var(--accent),transparent);
+  }
+
+  section p {
+      margin: 0.4rem 0;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      text-align: justify;
+  }
+
+  section p strong {
+      color: var(--text-main);
+      font-weight: 600;
+  }
+
+  section h3 {
+      margin-top: 1.3rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+  }
+
+  section ul {
+      margin: 0.2rem 0 0.8rem 1.1rem;
+      padding: 0;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+  }
+
+  section ul li {
+      margin-bottom: 0.25rem;
+  }
+
+  .two-cols {
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1.1fr);
+      gap: 1.5rem;
+  }
+
+  .taglist {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+  }
+
+  .taglist li::before {
+      content: "• ";
+      color: var(--accent);
+  }
+
+  /* CV IMAGE */
+
+  .cv-wrapper img {
+      width: 100%;
+      max-width: 850px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 1rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.85);
+  }
+
+  .cv-wrapper a {
+      text-decoration: none;
+  }
+
+  /* BOUTON SCROLL TOP */
+
+  .back-top {
+      text-align: center;
+      margin-top: 2.5rem;
+  }
+
+  .back-top a {
+      display: inline-block;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.85);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid #1f2937;
+      transition: 0.15s ease;
+  }
+
+  .back-top a:hover {
+      background: var(--accent-soft);
+      border-color: rgba(249,115,22,0.6);
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 900px) {
+      header {
+          position: static;
+          width: 100%;
+          height: auto;
+          flex-direction: column;
+          box-shadow: none;
+          border-right: none;
+          border-bottom: 1px solid #1f2937;
+      }
+      main {
+          margin-left: 0;
+          padding: 1.6rem 6vw 2.2rem;
+      }
+      .hero {
+          grid-template-columns: 1fr;
+      }
+      nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+      }
+      nav a {
+          font-size: 0.8rem;
+      }
+  }
+  </style>
+</head>
+
+<body id="top">
+
+<header>
+<h1><span>Kamate</span> Dramane</h1>
+
+
+
+
+
+
+
+  <p class="side-intro">
+    Étudiant en <strong>3ᵉ année de BUT Science des Données</strong> à l’IUT de Villetaneuse, actuellement en
+    <strong>alternance chez Klésia</strong> au sein du service de comptabilité technique, avec une spécialisation
+    en <strong>gestion et exploitation de bases de données</strong>.
+  </p>
+
+  <nav>
+    <ul>
+      <li><a href="#presentation"><span>👤</span>Présentation</a></li>
+      <li><a href="#avenir"><span>🎯</span>Projet professionnel</a></li>
+      <li><a href="#objectifs"><span>🗺️</span>Objectifs</a></li>
+      <li><a href="#choix"><span>❓</span>Pourquoi la data</a></li>
+      <li><a href="#projets"><span>📁</span>Projets</a></li>
+      <li><a href="#recrutement"><span>🧾</span>Parcours alternance</a></li>
+      <li><a href="#klesia"><span>🏢</span>Klésia</a></li>
+      <li><a href="#service"><span>📊</span>Service</a></li>
+      <li><a href="#taches"><span>🛠️</span>Missions</a></li>
+      <li><a href="#skills"><span>💻</span>Compétences</a></li>
+      <li><a href="#cv"><span>📄</span>Mon CV</a></li>
+      <li><a href="#contact"><span>📬</span>Contact</a></li>
+    </ul>
+  </nav>
+
+  <p class="side-footer">
+    © 2025 Kamate Dramane – Saint‑Denis, France
+  </p>
+</header>
+
+<main>
+
+<section class="hero" id="presentation">
+  <div class="hero-card" style="display:grid; grid-template-columns:minmax(0,2.2fr) minmax(0,1.1fr); gap:2rem; align-items:center;">
+    
+    <!-- Colonne texte -->
+    <div>
+      <div class="hero-tag">3ᵉ année BUT SD · Alternant chez Klésia</div>
+      <h2>Présentation personnelle</h2>
+      <p>
+        Je m'appelle <strong>Kamate Dramane</strong> et je suis en 3ᵉ année du
+        <strong>BUT Science des Données</strong> à l’IUT de Villetaneuse. Depuis le début de ma formation,
+        je suis passionné par la transformation de données brutes en informations utiles pour la décision.
+      </p>
+      <p>
+        Mon parcours me permet de travailler sur l’<strong>analyse</strong>, l’<strong>exploration</strong>,
+        la <strong>visualisation</strong> et la <strong>modélisation statistique</strong>, avec une montée
+        en compétence continue sur les langages <strong>Python</strong>, <strong>R</strong> et <strong>SQL</strong>.
+      </p>
+      <div class="hero-meta">
+        <span>🎓 <strong>BUT SD</strong> – IUT de Villetaneuse</span>
+        <span>🏢 <strong>Alternant</strong> – Klésia</span>
+        <span>📍 Saint‑Denis (93)</span>
+      </div>
+    </div>
+
+    <!-- Colonne photo -->
+    <div style="display:flex; justify-content:center;">
+      <div style="
+            width:220px;
+            height:260px;
+            padding:6px;
+            border-radius:28px;
+            background: radial-gradient(circle at top, #f97316 0, #111827 55%, #020617 100%);
+            box-shadow:0 22px 40px rgba(0,0,0,0.9);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+          ">
+        <img src="Dramane_pics.jpeg"
+             alt="Photo de Kamate Dramane"
+             style="
+               width:100%;
+               height:100%;
+               border-radius:22px;
+               object-fit:cover;
+               object-position:center;
+             ">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <div class="hero-card-bis">
+      <h3>Profil actuel</h3>
+      <p>
+        Alternant depuis bientôt 2 ans, je travaille aujourd’hui sur des <strong>données technico-comptables</strong> à travers des
+        bases de données technico‑comptable de Klésia et ses entités composantes (Carcept prev, Ipriac etc..), avec un rôle croissant dans l’<strong>analyse</strong>,
+        les <strong>contrôles</strong> et la <strong>fiabilisation</strong> des flux financiers.
+      </p>
+      <h3>Forces principales</h3>
+      <ul class="taglist">
+        <li>Rigueur et sens du détail sur les données chiffrées et techniques</li>
+        <li>Bonne compréhension des enjeux métier côté assurance / protection sociale</li>
+        <li>Capacité à vulgariser des résultats pour des non‑spécialistes et les services avec qui je collabore</li>
+      </ul>
+
+      <h3>Outils du quotidien</h3>
+      <div class="chips">
+        <span class="chip">SAS</span>
+        <span class="chip">SGBDR</span>
+        <span class="chip">Outils internes (Contrôles & Macros)</span>
+        <span class="chip">Excel avancé</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVENIR -->
+  <section id="avenir">
+    <div class="card">
+      <h2>Projet professionnel</h2>
+      <p>
+        À court terme, donc après le BUT SD, il faut savoir que Klésia m'ont proposer de prolonger deux ans supplémentaires, donc l'idée serai déja de trouver une école
+        pour poursuivre mes études, car j'ai exprimer à mon tour mon souhait de continuer avec eux. Un <strong>Master orienté data / systèmes d’information</strong> me permettra de consolider ces
+        compétences et d’accéder à des missions à plus forte responsabilité.
+      </p>
+      <p>
+        À moyen terme, je souhaite évoluer vers un poste d' <strong>Administrateur de base de données</strong> ou
+        d’<strong>analyste de données</strong> dans un contexte financier ou assurantiel, en capitalisant sur mon
+        expérience acquise chez <strong>Klésia</strong>.
+      </p>
+      <p>
+        Plus tard, mon objectif est de devenir un <strong>analyst de données expérimenté</strong> sur les flux financiers
+        : conception, optimisation, contrôle de qualité et mise à disposition des données pour les équipes
+        métiers et décisionnelles.
+      </p>
+    </div>
+  </section>
+
+  <!-- OBJECTIFS -->
+  <section id="objectifs">
+    <div class="card">
+      <h2>Objectifs à court, moyen et long terme</h2>
+
+      <h3>Court terme</h3>
+      <p>
+        Consolider mes acquis techniques en <strong>SAS</strong>, <strong>SQL</strong> et
+        <strong>gestion de la BTC</strong> dans le cadre de mon alternance, tout en validant ma 3ᵉ année de BUT SD.
+      </p>
+
+      <h3>Moyen terme</h3>
+      <p>
+        Intégrer un <strong>Master spécialisé</strong> dans la data ou les systèmes d’information,
+        en poursuivant en alternance pour garder un pied dans l’opérationnel et continuer à travailler sur des données réelles.
+      </p>
+
+      <h3>Long terme</h3>
+      <p>
+        Devenir un <strong>expert reconnu</strong> de l’architecture et de la gestion de données dans une grande
+        organisation financière: qualité, performance, sécurité et valorisation stratégique des données.
+      </p>
+    </div>
+  </section>
+
+  <!-- POURQUOI LA DATA -->
+  <section id="choix">
+    <div class="card">
+      <h2>Pourquoi j’ai choisi la science des données</h2>
+      <p>
+        La science des données est au croisement de la <strong>technique</strong> et de la
+        <strong>stratégie</strong> : elle permet d’appuyer des décisions sur des faits plutôt que sur des intuitions.
+        C’est exactement ce que je recherche dans mon travail. Réaliser des analyses sur des faits réels pour apporter des solutions aux problèmes.
+      </p>
+      <p>
+        La variété des tâches (statistiques, code, visualisation, communication) me permet de ne pas rester figé,
+        de progresser en continu et de garder un rôle central dans la prise de décision, comme un joueur polyvalent clé dans une équipe.
+      </p>
+    </div>
+  </section>
+
+ <section id="projets">
+  <div class="card">
+    <h1>Projets académiques marquants</h1>
+
+    <h2>Olympiades de l’Innovation Technologique</h2>
+    <p>Dans le cadre de la filière STI2D, j’ai participé au concours national des Olympiades de l’Innovation Technologique, organisé par l’académie de Créteil. Ce concours a pour objectif de valoriser des projets innovants réalisés par des élèves capables de travailler en équipe. Notre groupe, composé de huit élèves, a été sélectionné pour représenter notre établissement au musée de l’aéronautique Safran.</p>
+    <p>Le projet visait à améliorer la sécurité des cyclistes grâce à un sac à dos connecté. Celui-ci contenait une matrice LED pilotée par une carte Arduino, affichant des flèches lumineuses en fonction de la direction indiquée par le cycliste via un boîtier de commande fixé au guidon. Cette solution permettait d’augmenter la visibilité du cycliste, en particulier la nuit, et donc de limiter les risques d’accident.</p>
+    <p>Le développement technique a été réalisé en C++, en utilisant les bibliothèques Arduino. Nous avons dû respecter des contraintes de budget, d’ergonomie et de robustesse. Nous avons également travaillé sur l’alimentation du système, l’intégration esthétique et la validation fonctionnelle du prototype.</p>
+    <p>La soutenance s’est faite devant un jury de professionnels du groupe Safran, ce qui nous a permis d’apprendre à défendre nos choix techniques à l’oral. Ce projet m’a beaucoup appris : il m’a permis de comprendre comment appliquer mes connaissances à un besoin réel, tout en développant des compétences transversales comme le travail en groupe, la gestion de projet et la communication.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Programmation C++ avec Arduino<br>
+      – Conception électronique et câblage<br>
+      – Gestion de projet et respect d’un cahier des charges<br>
+      – Travail en équipe et communication<br>
+      – Présentation devant un jury professionnel</p>
+    <p>👉 <a href="https://www.vinci-melun.org/index.php/victoire-aux-olympiades-de-sciences-de-lingenieur-2022/" target="_blank">Voir l’article de l’Olympiade</a></p>
+
+    <br><br>
+
+    <h2>Projet 2 - SAÉ : Mise en œuvre d’un processus de Datamining (Prédiction de l’hypertension) S5</h2>
+    <p>Dans cette SAÉ que l'on réalise en binôme, nous avions pour objectif de mettre en place un processus complet de datamining afin de prédire la variable <strong>Has_Hypertension</strong>, qui indique si un individu présente ou non un risque d’hypertension. Le jeu de données contenait plusieurs variables explicatives telles que l’âge (<strong>Age</strong>), l’indice de masse corporelle (<strong>BMI</strong>), la consommation de sel (<strong>Salt_Intake</strong>), le niveau de stress (<strong>Stress_Score</strong>), la durée de sommeil (<strong>Sleep_Duration</strong>), les antécédents familiaux ou personnels (<strong>BP_History</strong>, <strong>Family_History</strong>), la prise de médicaments (<strong>Medication</strong>), le statut tabagique (<strong>Smoking_Status</strong>) ou même le niveau d’activité physique (<strong>Exercise_Level</strong>).</p>
+    <p>Après une phase d’exploration, de nettoyage et de préparation du jeu de données, nous avons testé plusieurs modèles de prédiction : un <strong>KNN (les k-plus proches voisins)</strong>, une <strong>régression linéaire</strong>, une <strong>régression logistique</strong> et un <strong>Random Forest</strong>. On a évalué chaque modèle à l’aide d'indicateurs adaptés comme la précision, la matrice de confusion et le score F1, ce qui nous a permis de comparer leurs performances de manière rigoureuse.</p>
+    <p>Parmi l’ensemble des méthodes testées, c’est le <strong>Random Forest</strong> qui a obtenu les meilleurs résultats. Ce modèle s’est montré le plus performant pour capturer les relations complexes entre les variables et prédire correctement la présence d’hypertension. Grâce à sa robustesse et sa capacité à gérer des données hétérogènes, il s’est imposé comme le choix optimal pour ce problème de classification. Sa précision s'élève à plus de 99%.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Compréhension et préparation d’un jeu de données médicales<br>
+      – Utilisation et comparaison de plusieurs modèles de machine learning<br>
+      – Maîtrise des métriques de classification<br>
+      – Analyse critique et justification du meilleur modèle<br>
+      – Travail en binôme et démarche complète de datamining</p>
+
+    <hr>
+
+    <h2>Projet 3 - SAÉ : Régression sur données médicales</h2>
+    <p>Ce projet visait à appliquer des modèles de régression sur des données réelles issues du domaine médical. Travaillant en binôme, nous avons étudié un jeu de données portant sur des tumeurs (bénignes ou malignes), avec pour objectif de déterminer les facteurs discriminants à travers des méthodes statistiques.</p>
+    <p>La première étape a consisté à nettoyer et transformer les données avec Python. Nous avons utilisé Pandas pour repérer les valeurs aberrantes, combler les valeurs manquantes, et préparer nos variables pour l’analyse. Ensuite, nous avons visualisé les corrélations entre les variables à l’aide de seaborn, et établi des hypothèses sur leur pertinence.</p>
+    <p>Nous avons testé plusieurs modèles de régression : linéaire simple, multiple, logistique. Chaque modèle a été évalué selon des critères précis (R², RMSE, matrice de confusion). Nous avons aussi testé la séparation des jeux d’apprentissage/test pour valider nos prédictions. Enfin, nous avons présenté nos résultats dans un rapport détaillé et lors d’une soutenance orale.</p>
+    <p>Ce projet m’a donné une bonne compréhension des statistiques appliquées. Il m’a aussi permis d’acquérir de l’expérience sur la modélisation avec scikit-learn et d’apprendre à vulgariser des résultats complexes pour les rendre accessibles.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Nettoyage de données médicales avec Python<br>
+      – Visualisation avec seaborn<br>
+      – Régression linéaire et logistique (modèles supervisés)<br>
+      – Évaluation des performances<br>
+      – Communication scientifique (rapport + oral)</p>
+
+    <hr>
+
+    <h2>Projet 4 - SAÉ : Lecture et écriture de fichiers de données</h2>
+    <p>Ce projet a marqué mon premier contact avec la manipulation de données en Python. Il s’agissait d’un exercice d’initiation à la lecture, transformation et export de fichiers dans différents formats : .TXT, .CSV principalement. L’objectif était de comprendre les étapes fondamentales du traitement des données tabulaires.</p>
+    <p>À partir d’un fichier CSV fictif (listes de personnages, villages, rangs...), nous avons utilisé la bibliothèque Pandas pour analyser les colonnes, identifier les valeurs manquantes, corriger les erreurs, filtrer les doublons et enfin produire un fichier propre. Nous avons également rédigé des fonctions pour automatiser certaines étapes du traitement.</p>
+    <p>Ce projet m’a permis de comprendre que la qualité des données est essentielle, et que les erreurs dans les jeux de données peuvent avoir un impact considérable sur les résultats finaux. J’ai aussi appris à mieux structurer mon code et à le commenter pour qu’il soit réutilisable par d’autres.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Lecture/écriture de fichiers .CSV/.TXT avec Pandas<br>
+      – Nettoyage, filtrage, transformation des données<br>
+      – Écriture de fonctions Python<br>
+      – Organisation du code et documentation<br>
+      – Sensibilisation à la rigueur dans le traitement</p>
+
+    <hr>
+
+    <h2>Projet 5 - SAÉ : Étude de cas sur la conformité réglementaire (RGPD)</h2>
+    <p>Ce projet a été réalisé sous forme d’étude de cas pendant le deuxième semestre de ma deuxième année de BUT Science des Données. Il s’agissait d’une SAÉ dédiée à la compréhension du cadre réglementaire lié à l’usage des données personnelles, avec un focus particulier sur le RGPD (Règlement Général sur la Protection des Données).</p>
+    <p>À travers des scénarios concrets, nous avons étudié les rôles du responsable de traitement, du sous-traitant et du DPO (délégué à la protection des données). Ces cas pratiques nous ont permis de comprendre les obligations juridiques de chaque acteur dans une chaîne de traitement des données, ainsi que les droits des individus concernés (accès, rectification, effacement, portabilité…).</p>
+    <p>Nous avons également appris à repérer les risques juridiques dans la gestion des données : absence de base légale, durée de conservation trop longue, ou encore défaut d’information des utilisateurs. Ces problématiques ont été abordées dans le cadre d’un travail de groupe où chacun jouait un rôle (analyste, juriste, DPO, chef de projet).</p>
+    <p>Ce projet nous a aussi permis d’examiner des contrats de sous-traitance type, afin d’y repérer les éléments obligatoires du RGPD : clauses de sécurité, notification en cas de violation, audits réguliers, etc. Nous avons simulé la rédaction de recommandations à destination d’une entreprise pour corriger ses pratiques et garantir la conformité de ses traitements de données.</p>
+    <p>Ce travail m’a sensibilisé à l’importance de l’éthique et du cadre légal dans les projets data. Cela m’a montré qu’au-delà des compétences techniques, un bon professionnel de la donnée doit aussi savoir anticiper les risques et intégrer les règles dans sa démarche d’analyse.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Compréhension du RGPD et de ses principes clés<br>
+      – Identification des responsabilités des acteurs (responsable, DPO, sous-traitant)<br>
+      – Analyse de conformité sur des cas pratiques<br>
+      – Lecture critique de contrats de sous-traitance<br>
+      – Recommandations réglementaires dans un cadre professionnel<br>
+      – Sensibilisation à la gouvernance et à l’éthique des données</p>
+
+    <hr><hr>
+
+    <h2>Projet 6 - SAÉ : Comprendre la production de données en entreprise (cours d’économie)</h2>
+    <p>Ce projet a été réalisé durant ma première année de BUT Science des Données, dans le cadre du cours d’économie appliquée. Il visait à nous faire comprendre comment les entreprises produisent et gèrent leurs propres données en interne, et pourquoi ces données sont essentielles dans leur fonctionnement et leur prise de décision.</p>
+    <p>Nous avons étudié des cas concrets d’entreprises (fictives ou réelles) et analysé les différentes sources de données internes : données clients (CRM), données de production, données comptables, données RH, etc. Le but était de comprendre d’où viennent ces données, comment elles circulent dans les services, et comment elles sont exploitées par les managers et les analystes.</p>
+    <p>À travers différents exemples, nous avons observé que la production de données ne se limite pas à la collecte automatique : elle peut aussi dépendre de la saisie humaine, de systèmes informatiques intégrés (ERP), ou même de documents papier numérisés. Cela soulève des problématiques de fiabilité, de mise à jour, et de cohérence entre services.</p>
+    <p>Nous avons également vu que ces données sont à la base de nombreuses décisions stratégiques en entreprise : pilotage des ventes, optimisation des stocks, gestion des effectifs, suivi de la performance, etc. Il est donc crucial que leur qualité soit assurée dès leur création, et que les processus de traitement soient clairs et bien définis.</p>
+    <p>Ce projet m’a permis d’avoir une vision globale du cycle de la donnée, depuis sa création jusqu’à son utilisation finale. J’ai compris que l’analyse de données commence bien avant la partie "technique", et qu’elle dépend fortement du contexte organisationnel dans lequel les données sont produites. Cette prise de recul est essentielle pour devenir un bon professionnel de la data.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Identification des sources de données internes en entreprise<br>
+      – Compréhension des flux d’information et des services concernés<br>
+      – Sensibilisation à la qualité des données dès leur création<br>
+      – Mise en relation entre données et prise de décision<br>
+      – Approche économique et organisationnelle des systèmes d’information<br>
+      – Analyse critique de la structure des données dans un contexte réel</p>
+
+    <hr><hr>
+
+    <h2>Projet 7 - SAÉ : Mise en place et conception d'un SGBDR</h2>
+    <p>Ce projet de fin de semestre 2 avait pour but de concevoir et d’implémenter une base de données relationnelle sur le thème des festivals. Travaillant en trinôme, nous avons suivi toutes les étapes d’un cycle de gestion de données : nettoyage, modélisation, intégration, interrogation et visualisation.</p>
+    <p>Nous avons d’abord nettoyé les données fournies au format CSV à l’aide de Python et Pandas, puis nous avons conçu un modèle entité-association (E/A) pour structurer les informations. Une fois les relations et les dépendances bien définies, nous avons transformé ce modèle en schéma relationnel, normalisé jusqu’à la 3NF pour garantir cohérence et efficacité.</p>
+    <p>La base a ensuite été implémentée via SQL (PostgreSQL), avec création manuelle des tables, clés primaires et étrangères. Nous avons inséré les données, puis rédigé plusieurs requêtes complexes pour extraire des statistiques pertinentes (par région, par type de festival, etc.). Enfin, nous avons utilisé Metabase pour produire des visualisations dynamiques et compréhensibles.</p>
+    <p>Ce projet m’a beaucoup appris sur la structuration des données, la logique des bases relationnelles et l’importance de la modélisation. Il m’a permis d’approfondir SQL et de découvrir les enjeux de la visualisation dans une démarche orientée utilisateur.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Nettoyage et structuration de données tabulaires<br>
+      – Modélisation E/A et schéma relationnel<br>
+      – SQL (requêtes, jointures, normalisation)<br>
+      – Création de dashboards sous Metabase<br>
+      – Travail en trinôme et organisation</p>
+
+    <hr>
+  </div>
+</section>
+
+  <!-- PARCOURS ALTERNANCE -->
+  <section id="recrutement">
+    <div class="card">
+      <h2>Parcours d’alternance</h2>
+      <p>
+        Depuis ma 2ᵉ année de BUT Science des Données, je suis en <strong>alternance chez Klésia</strong> en tant q'
+        <strong>Administrateur de base de données</strong> au sein de la comptabilité technique.
+      </p>
+      <p>
+        Cette expérience me permet de manipuler des <strong>données financières réelles</strong>, d’appliquer les notions
+        vues en cours et de gagner en autonomie sur des missions à fort enjeu réglementaire et comptable.
+      </p>
+      <p>
+        Mon intégration a été progressive : Au départ j'ai eu la découverte des outils (SAS et Excel avec la BTC), formation aux normes technico‑comptables,
+        puis prise en charge de missions récurrentes (analyses des données trimestrielles, calculs de taxes, contrôles de doublons...).
+      </p>
+    </div>
+  </section>
+
+  <!-- KLESIA -->
+  <section id="klesia">
+    <div class="card">
+      <h2>Klésia group</h2>
+      <div class="two-cols">
+        <div>
+          <p>
+            <strong>Klésia</strong> est un groupe de protection sociale à but non lucratif (ne cherche pas tirer du bénéfice), actif en
+            <strong>santé</strong>, <strong>prévoyance</strong>, <strong>retraite complémentaire</strong> et en <strong>assurance de personne</strong>.
+            Le groupe protège plusieurs millions de personnes en France.
+          </p>
+          <p>
+            Il se distingue par un fort <strong>engagement social</strong> et des actions de
+            <strong>prévention santé</strong> et de qualité de vie au travail, tout en développant des
+            solutions digitales modernes. Mais pas seulement, car il vise tout type de personnes, tandis que par exemple le groupe Pro BTP ne cible uniquement les adhérents spécialisés dans le bâtiment.
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li>Position majeure sur le marché de la protection sociale</li>
+            <li>Innovations digitales : espace client, téléconsultation, outils en ligne, webinaires, intelligence artificielle</li>
+            <li>Culture d’entreprise basée sur la <strong>bienveillance</strong> et la <strong>proximité</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section id="service">
+    <div class="card">
+      <h2>Service de comptabilité technique</h2>
+      <p>
+        Je travaille actuellement au 4ᵉ étage du bâtiment Strato (siège social), au sein du service de <strong>comptabilité technique</strong>,
+        rattaché à la direction financière. Ce service exploite la base <strong>BTC (Base de donnée Technico‑Comptable)</strong>,
+        alimentée via <strong>SAS</strong> et manuellement par nous.
+      </p>
+      <p>
+        La BTC centralise tout les flux courants de Klésia(cotisations, taxes, prestations, commissions, réassurance) et sert à
+        justifier les écritures comptables, préparer les <strong>échéances trimestrielles et annuelles</strong>
+        et alimenter les états financiers.
+      </p>
+      <p>
+        Le service joue un rôle clé dans la <strong>fiabilité</strong> des comptes et l’<strong>optimisation</strong>
+        des processus financiers par l’automatisation.
+      </p>
+    </div>
+  </section>
+
+  <!-- TACHES -->
+  <section id="taches">
+    <div class="card">
+      <h2>Missions en alternance</h2>
+      <p>
+        Mes missions consistent à <strong>construire, maintenir et exploiter</strong> la BTC en réalisant des
+        extractions, des contrôles et des calculs nécessaires aux clôtures comptables (annuelles et trimestrielles).
+      </p>
+
+      <h3>Missions principales</h3>
+      <ul>
+        <li>Analyses de données consolidées et contrôles de cohérence</li>
+        <li>Calculs de taxes (dont la <strong>taxe FMT</strong>)</li>
+        <li>Préparation et compilation de fichiers pour injection dans la BTC</li>
+        <li>Rédaction de procédures et documentation des traitements</li>
+        <li>Contrôles et vérifivation d'anomalies (doublons, mauvaise attribution de line of business ...)</li>
+      </ul>
+
+      <h3>Compétences développées</h3>
+      <ul>
+        <li>Maîtrise croissante de <strong>SAS</strong> et des extractions ciblées</li>
+        <li>Compréhension des <strong>clés comptables</strong> et des flux technico‑comptables</li>
+        <li>Rigueur dans le suivi des échéances et des contrôles réglementaires</li>
+      </ul>
+    </div>
+  </section>
+
+<section id="skills">
+  <div class="card">
+    <h2>Compétences techniques</h2>
+    <div class="two-cols">
+      <div>
+        <ul>
+          <li><strong>SQL</strong> : requêtes complexes, jointures, filtrage, conception de bases relationnelles.</li>
+          <li><strong>Python</strong> : Pandas, Seaborn, scikit‑learn pour l’analyse, la modélisation et la visualisation.</li>
+          <li><strong>R</strong> : analyses statistiques et graphiques (ggplot2).</li>
+          <li><strong>MongoDB</strong> : manipulation de données NoSQL et requêtes de base.</li>
+          <li><strong>SAS</strong> : extractions et traitements sur la base technico‑comptable (BTC).</li>
+          <li><strong>SSIS</strong> : flux ETL, chargement et transformation de données vers des entrepôts.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Excel</strong> : tableaux croisés dynamiques, formules avancées, automatisation.</li>
+          <li><strong>Power BI</strong> : création de rapports dynamiques et storytelling visuel.</li>
+          <li><strong>Tableau</strong> : tableaux de bord interactifs et exploration visuelle de données.</li>
+          <li><strong>Metabase</strong> : tableaux de bord automatisés et suivi d’indicateurs de performances.</li>
+          <li><strong>BTC TOOLS</strong> : outil interne pour contrôler les formats et détecter les anomalies.</li>
+          <li><strong>Outils bureautiques</strong> : présentations (Canva, PowerPoint…), rédaction de rapports.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem;">
+    <h2>Compétences transversales</h2>
+    <div class="two-cols">
+      <div>
+        <ul>
+          <li><strong>Autonomie</strong> : capacité à avancer seul sur des analyses et à proposer des solutions.</li>
+          <li><strong>Rigueur</strong> : attention aux détails, vérification systématique des résultats.</li>
+          <li><strong>Ponctualité</strong> : respect des délais de livrables et des échéances comptables.</li>
+          <li><strong>Organisation</strong> : planification des tâches, priorisation et suivi des projets.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Travail d’équipe</strong> : collaboration en projet (SAÉ, alternance) et communication claire.</li>
+          <li><strong>Esprit d’analyse</strong> : capacité à comprendre un besoin métier et à le traduire en indicateurs.</li>
+          <li><strong>Esprit critique</strong> : remise en question des résultats et choix méthodologiques adaptés.</li>
+          <li><strong>Curiosité</strong> : veille sur de nouveaux outils data et envie d’apprendre en continu.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="cv">
+  <div class="card cv-wrapper">
+    <h2>Mon CV</h2>
+    <p>
+      Ci-dessous voici mon curriculum vitae comprenant une synthétisation de mon profil:
+    </p>
+
+    <!-- Aperçu du CV en petit -->
+    <a href="cv.html" target="_blank">
+      <img src="CV_KAMATE_Dramane_BUT1-SD-vers-APP.jpg"
+           alt="CV de Kamate Dramane"
+           style="
+             width:100%;
+             max-width:380px;     /* taille plus petite */
+             display:block;
+             margin:0.8rem auto 0 auto;
+             border-radius:12px;
+             box-shadow:0 10px 25px rgba(0,0,0,0.35);
+           ">
+  </div>
+</section>
+
+
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Ci-dessous mes différentes coordonnées :</p>
+      <ul class="taglist">
+        <li><strong>Email</strong> : <a href="mailto:Dramanekm12@gmail.com" style="color:var(--accent);text-decoration:none;">Dramanekm12@gmail.com</a></li>
+        <li><strong>Téléphone</strong> : <a href="tel:+33712131415" style="color:var(--accent);text-decoration:none;">07 12 13 14 15</a></li>
+        <li><strong>LinkedIn</strong> : <a href="https://www.linkedin.com/in/dramane-k-9429aa2ba" target="_blank" style="color:var(--accent);text-decoration:none;">linkedin.com/in/dramane-k-9429aa2ba</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="back-top">
+    <a href="#top">⬆️ Revenir en haut</a>
+  </div>
+
+</main>
+
+</body>
+</html>

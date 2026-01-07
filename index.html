@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio de Dramane Kamate</title>
+
+<style>
+/* ESPACEMENT ENTRE LE TITRE ET LES BOUTONS */
+header h1 {
+    margin-bottom: 6rem;
+}
+
+/* PALETTE DE COULEURS */
+:root {
+    --beige: #f5f5dc;
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #333333;
+    --mat-grey: #2b2b2b;   /* gris mat */
+}
+
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--beige);
+    color: var(--grey);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background-color: var(--mat-grey);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;   /* AVANT : 1.5rem 2rem */
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Titre plus compact */
+header h1 {
+    margin-bottom: 1.2rem;     /* AVANT : 2.5rem / 6rem */
+    font-size: 1.6rem;         /* optionnel : titre un peu plus petit */
+}
+
+/* Menu plus serré */
+header div {
+    gap: 0.6rem;               /* AVANT : 1rem */
+    margin-top: 0.4rem;        /* AVANT : 1rem */
+}
+
+/* Boutons un peu moins hauts */
+header a {
+    padding: 6px 14px;         /* AVANT : 12px 20px */
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+
+/* CONTENEUR DU MENU */
+header div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* BOUTONS DU MENU = BLOCS */
+header a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 20px;
+    background-color: #3a3a3a;   /* blocs gris foncé */
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+header a:hover {
+    background-color: #555;
+}
+
+/* SECTIONS (cartes) */
+section {
+    padding: 2.2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background: linear-gradient(145deg, #ffffff, #f6f6f6);
+    border-radius: 18px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    transition: 0.25s ease;
+}
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* TITRES DE SECTIONS */
+section h2 {
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    position: relative;
+    color: var(--black);
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+    width: 60px;
+    height: 3px;
+    background: #ffb347;  /* accent couleur */
+    border-radius: 999px;
+}
+
+/* SOUS-TITRES */
+h3 {
+    color: var(--black);
+    margin-top: 1.5rem;
+}
+
+/* TEXTE DES SECTIONS */
+section p {
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 1rem;
+    color: #444444;
+}
+
+section p strong {
+    font-weight: 700;
+    color: #222222;
+}
+
+/* LISTES DANS LES SECTIONS */
+section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* IMAGES */
+img {
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--mat-grey);
+    color: var(--white);
+    margin-top: 2rem;
+}
+</style>
+</head>
+
+
+<body id="top">
+
+<header>
+    <h1>Bienvenue sur mon Portfolio</h1>
+
+    <div>
+        <a href="#presentation">👤 Présentation personnelle</a>
+        <a href="#avenir">🎯 Ce que je veux faire plus tard</a>
+        <a href="#objectifs">🗺️ Objectifs à court/moyen/long terme</a>
+        <a href="#choix">❓ Pourquoi j'ai choisi la science des données</a>
+        <a href="#Projets réalisés">📁 Mes différents projets réalisés</a>
+        <a href="#recrutement">🧾 Recrutement & Intégration</a>
+        <a href="#klesia">🏢 Présentation de Klésia</a>
+        <a href="#service">🧾 Présentation de mon service</a>
+        <a href="#taches">🛠️ Tâches accomplies</a>
+        <a href="#Mes compétences techniques">💻 Mes compétences techniques</a>
+        <a href="#contact">📬 Contact</a>
+    </div>
+</header>
+
+<!-- ICI TON CONTENU EXISTANT (sections présentation, avenir, etc.)
+     NE CHANGE PAS LE TEXTE, GARDE JUSTE LA STRUCTURE <section>...</section> -->
+
+<!-- ... toutes les autres sections de ton fichier d’origine ... -->
+
+<section id="cv">
+  <h2>Mon CV</h2>
+  <p>
+    Vous pouvez consulter mon CV ci‑dessous (cliquez pour l’ouvrir en grand dans un nouvel onglet).
+  </p>
+
+  <!-- lien cliquable vers l'image -->
+  <a href="./CV_KAMATE_Dramane_BUT1-SD-vers-APP.jpg" target="_blank">
+    <img src="./CV_KAMATE_Dramane_BUT1-SD-vers-APP.jpg"
+         alt="CV de Kamate Dramane"
+         style="
+           width:100%;
+           max-width:800px;
+           display:block;
+           margin:0 auto;
+           border-radius:12px;
+           box-shadow:0 10px 25px rgba(0,0,0,0.15);
+         ">
+  </a>
+</section>
+
+
+
+
+</body>
+</html>
+
+  <section id="presentation">
+    <h2>Présentation personnelle</h2>
+    <p>
+      Je m'appelle <strong>Kamate Dramane</strong> et je suis actuellement étudiant en 3ᵉ année du <strong>Bachelor Universitaire de Technologie en Science des Données (BUT SD)</strong> à l’IUT de Villetaneuse. Depuis le début de ma formation, je suis animé par une passion pour l’univers des données et leur capacité à transformer des informations en connaissances utiles.
+    </p>
+  
+    <p>
+      J’ai choisi cette filière pour explorer les différentes facettes de la science des données, notamment l’<strong>analyse, l’exploration, la visualisation</strong> et la <strong>modélisation statistique</strong>, qui est d’ailleurs le parcours que je suivrai l’an prochain. Ce cursus me permet de consolider mes compétences en statistiques, mathématiques, communication, mais aussi en programmation avec des langages comme <strong>Python</strong> et <strong>R</strong>.
+    </p>
+  
+    <p>
+      Ce qui me passionne particulièrement, c’est la manière dont on peut faire parler les chiffres. Grâce à l’analyse et à la visualisation de données, je peux extraire des informations clés, expliquer des phénomènes ou même guider la prise de décision à partir d’indicateurs concrets.
+    </p>
+  
+    <p>
+      J’apprécie également l’<strong>exploration de données</strong>, qui consiste à structurer des jeux de données parfois bruts ou désorganisés, pour les rendre exploitables. Cette étape me semble essentielle dans tout projet de data science, car elle permet d’avoir une vue d’ensemble avant même de commencer à modéliser.
+    </p>
+  
+    <p>
+      En résumé, je développe chaque jour un peu plus mon esprit critique, ma rigueur méthodologique, et ma capacité à résoudre des problèmes complexes grâce aux données.
+    </p>
+  </section>
+  
+
+  <section id="avenir">
+    <h2>Ce que je veux faire plus tard</h2>
+    <p>
+      Mon objectif professionnel est de devenir <strong>gestionnaire de base de données</strong>, avec une spécialisation en <strong>conception, optimisation</strong> et <strong>administration des bases</strong>. Ce métier m’attire particulièrement car il ne se limite pas à l’aspect technique de l’administration ; il englobe aussi la stratégie, la sécurité, la qualité et la valorisation des données.
+    </p>
+  
+    <p>
+      À travers ce rôle, je souhaite participer activement à la <strong>structuration et à la fiabilité des données comptables</strong> d’une entreprise. J’aimerais pouvoir exploiter mes compétences pour <strong>améliorer la précision des rapports financiers</strong>, fiabiliser les prises de décision et contribuer à la performance globale de l’organisation.
+    </p>
+  
+    <p>
+      Afin d’être pleinement opérationnel et d’apporter une réelle valeur ajoutée, je prévois de poursuivre mes études après le BUT. Mon ambition est d’intégrer un <strong>Master spécialisé en gestion de bases de données ou en Big Data</strong>, ce qui me permettrait non seulement d’approfondir mes connaissances techniques, mais aussi de me démarquer sur le marché du travail.
+    </p>
+  
+    <p>
+      Pour atteindre cet objectif que je me suis fixé, j’ai intégré une <strong>alternance au sein de Klésia</strong>, un groupe œuvrant dans le domaine comptable. Cette expérience me permet de me concentrer sur le <strong>développement de mes compétences en gestion de base de données</strong>, en langage <strong>SQL</strong> et en <strong>optimisation de requêtes</strong>. Elle me donne l’opportunité d’appliquer concrètement les notions théoriques acquises en cours sur des projets réels liés aux bases de données financières.
+    </p>
+  
+    <p>
+      En parallèle, je continue à participer activement aux <strong>SAÉ (Situations d’Apprentissage et d’Évaluation)</strong> dans le cadre de ma formation. Ces projets de groupe sont l’occasion d’améliorer ma communication et mon efficacité, de mieux collaborer avec mes camarades et de me préparer à évoluer efficacement dans un environnement professionnel comme celui de mon alternance.
+    </p>
+  </section>
+
+  <section id="objectifs">
+    <h2>Mes objectifs à court, moyen et long terme</h2>
+  
+    <h3> Court terme </h3>
+    <p>
+      Consolider mes compétences en système de gestion de base de données relationelles (SGBDR) et extraction via SAS / PROC SQL dans mon alternance chez Klésia. Finaliser ma deuxième année de BUT SD avec succès, en validant les SAÉ et en poursuivant mon parcours en modélisation statistiques. Je souhaite aussi approfondir mes connaissances en Power BI et automatisation Excel.
+    </p>
+  
+    <h3> Moyen terme </h3>
+    <p>
+      Obtenir mon BUT Science des Données puis intégrer un Master spécialisé en gestion des bases de données ou en système d'information. Je souhaite acquérir plus de responsabilités en poursuivant mon master avec une prolongation en alternance dans l'entreprise dans laquelle je suis. Mon objectif est de maîtriser davantage les outils de traitement massif des données (SAS, les outils technico-comptables...) et d’améliorer mes compétences en modélisation avancée.
+    </p>
+  
+    <h3> Long terme </h3>
+    <p>
+      Occuper un poste de gestionnaire de bases de données dans une grande entreprise. Participer à des projets stratégiques autour de la gouvernance des données, de leur sécurité, et de leur valorisation. Mon but ultime est de devenir un <strong>expert reconnu en infrastructure et gestion de données</strong>, avec une forte dimension conseil et innovation.
+    </p>
+  </section>
+  
+  
+  <section id="recrutement">
+    <h2>Démarches de recrutement & processus d’intégration</h2>
+  
+    <p>
+      Je me devais de trouver une alternance pour ma deuxième année afin d’accomplir les objectifs que je m’étais fixés : prendre de l’expérience et de la maturité à travers le monde du travail. C’est pourquoi j’ai commencé à postuler dès le mois de mars sur plusieurs jobboards : HelloWork, Job Teaser, Monster, Indeed ou encore Welcome to the Jungle. J’y déposais ma lettre de motivation et mon CV.
+    </p>
+  
+    <p>
+      Après environ un mois de recherche, j’ai postulé à une offre chez <strong>Klésia</strong> pour un poste de <strong>gestionnaire de base de données</strong> dans un service de comptabilité technique. Deux jours après avoir postulé, j’ai reçu un appel de la directrice du développement RH de Klésia. Elle m’a expliqué que mon profil l’intéressait et m’a proposé un entretien vidéo.
+    </p>
+  
+    <p>
+      Cet entretien s’est déroulé le 2 mai à 16h et a duré environ 30 minutes. Nous avons parlé de mes compétences, de mes qualités, du rythme d’alternance, des missions et de ma compréhension du poste. L’échange s’étant très bien passé, elle m’a mis en relation dès le lendemain (3 mai) avec mon tuteur actuel, Monsieur <strong>David Naelten</strong>, pour un appel téléphonique.
+    </p>
+  
+    <p>
+      Cet appel nous a permis de mieux nous connaître et de confirmer ma capacité à occuper ce poste en fonction des missions et des outils utilisés. Le 7 mai, j’ai reçu un mail de mon tuteur m’informant que j’étais accepté ! J’ai ensuite attendu jusqu’au 13 mai pour recevoir officiellement la confirmation d’embauche et débuter la phase administrative.
+    </p>
+  
+    <p>
+      J’ai choisi Klésia car c’est une entreprise du secteur de l’assurance qui propose un <strong>environnement de travail agréable</strong>, <strong>des missions variées</strong> et <strong>des perspectives d’évolution</strong>. Elle développe sans cesse de nouvelles offres pour s’adapter aux besoins de ses clients, et cela m’a motivé à en apprendre davantage.
+    </p>
+  
+    <p>
+      Mon intégration s’est très bien passée : mon tuteur et mes collègues m’ont accueilli chaleureusement. Les employés sont à l’écoute et répondent à toutes mes questions. On m’a présenté les missions, les outils quotidiens (comme <strong>SAS</strong> ou <strong>Excel</strong>), ainsi que les bases technico-comptables que je manipule régulièrement.
+    </p>
+  
+    <p>
+      Aujourd’hui, je réalise des extractions avec SAS, j’analyse des données comptables, et je travaille sur des <strong>analyses trimestrielles</strong> avec Excel et des <strong>tableaux croisés dynamiques</strong>. Cette expérience concrète est précieuse pour ma formation, et m’aide à progresser chaque jour dans un cadre bienveillant.
+    </p>
+  </section>
+  
+  <section id="klesia">
+    <h2>Présentation générale de Klésia</h2>
+<section id="klesia">
+
+  <!-- Conteneur des deux images côte à côte -->
+  <div style="display:flex; justify-content:center; align-items:center; gap:2rem; margin-top:1rem;">
+
+      <!-- Image du bâtiment -->
+      <img src="Strato_Klesia.jpg"
+           alt="Bureaux Klésia Strato Paris 17"
+           style="width:30%; border-radius:8px;">
+
+      <!-- Logo Klésia -->
+      <img src="logo_klésia.jpg"
+           alt="Logo Klésia"
+           style="width:30%; border-radius:8px;">
+  </div>
+
+</section>
+
+
+  
+    <p><strong>Klésia</strong> est un groupe de protection sociale à but non lucratif, spécialisé dans la <strong>complémentaire santé</strong>, la <strong>prévoyance</strong> et la <strong>retraite complémentaire</strong>. Il est né le 4 juillet 2012 de la fusion entre le groupe Mornay (retraite complémentaire) et le groupe D&O (santé et épargne).</p>
+  
+    <p>Grâce à cette fusion, le groupe compte aujourd’hui près de <strong>3 200 collaborateurs</strong> et s’est donné les moyens de répondre efficacement aux besoins des <strong>entreprises</strong> comme des <strong>particuliers</strong>.</p>
+  
+    <p>Le chiffre d’affaires de Klésia s’élève à plus de <strong>10,9 milliards d’euros</strong> (retraite, santé, prévoyance, congé de fin d’activité). Il est aujourd’hui le <strong>1er groupe de protection sociale</strong> en santé complémentaire avec :</p>
+    <ul style="font-size: 1.05rem;">
+      <li>1,8 milliard € de chiffre d’affaires</li>
+      <li>137 millions € d’affaires nouvelles en santé et prévoyance</li>
+      <li>3,6 millions de personnes couvertes</li>
+      <li>Un ratio de solvabilité de <strong>190 %</strong></li>
+    </ul>
+  
+    <p>Le directeur général du groupe est <strong>Christian Schmidt de la Brélie</strong>.</p>
+
+    <h3>Petite mise en avant des valeurs de Klésia</h3>
+<p>Au-delà de ses activités économiques, Klésia porte des valeurs fortes qui orientent chacune de ses actions. Le groupe place l’humain au cœur de sa mission, en accompagnant aussi bien les entreprises que les particuliers à chaque étape de leur vie professionnelle et personnelle.</p>
+
+<p>Klésia se distingue par son <strong>engagement solidaire</strong>, notamment à travers des programmes de prévention santé, un soutien constant aux aidants, et des actions concrètes pour améliorer la qualité de vie au travail. Le groupe valorise également la <strong>transparence</strong> et la <strong>proximité</strong> avec ses adhérents, en proposant des services accessibles, compréhensibles et adaptés aux besoins de chacun.</p>
+
+<p>Ces valeurs se traduisent également dans une volonté d’<strong>innovation continue</strong>, grâce au développement d’outils digitaux modernes, d’un espace client intuitif et de solutions de téléconsultation. Klésia mise sur la technologie non pas comme une fin, mais comme un moyen d’améliorer l’expérience de ses assurés.</p>
+
+<p>Enfin, Klésia prône une culture d’entreprise fondée sur la <strong>bienveillance</strong>, l’<strong>écoute</strong> et le <strong>respect</strong>. Ces principes créent un environnement de travail agréable et stimulant, où chacun peut progresser, s’exprimer et contribuer à un projet collectif tourné vers l’avenir.</p>
+
+    <p>Parmi ses priorités figurent :</p>
+    <ul style="font-size: 1.05rem;">
+      <li>L’amélioration de la qualité de vie au travail</li>
+      <li>Des solutions sur mesure pour chaque secteur (tertiaire, industriel, etc.)</li>
+      <li>La prévention santé et la cybersécurité (j’ai suivi moi-même une formation dès mon arrivée)</li>
+    </ul>
+  
+    <p>Ses principaux concurrents sont : Malakoff Humanis, AG2R La Mondiale, Apicil, Allianz, et Pro BTP. Pourtant, Klésia se distingue par :</p>
+    <ul style="font-size: 1.05rem;">
+      <li>Un fort engagement social et solidaire</li>
+      <li>Une approche personnalisée de l’accompagnement client</li>
+      <li>Des innovations digitales : espace client en ligne, téléconsultation, applis mobiles</li>
+    </ul>
+  
+    <p>Klésia mise aussi sur l’<strong>intelligence artificielle</strong> et les <strong>technologies modernes</strong> pour améliorer la relation client, simplifier l’accès aux services et renforcer la transparence de la protection sociale.</p>
+  
+    <p>Enfin, sur le plan international, Klésia travaille avec divers partenaires, organismes de sécurité sociale et entreprises à l’étranger. Elle propose des services spécifiques pour les expatriés et participe à des conférences mondiales afin de renforcer son expertise.</p>
+  
+    <p>Grâce à sa <strong>mission sociale</strong>, sa <strong>vision innovante</strong> et son engagement au quotidien, Klésia reste un acteur incontournable et respecté dans le secteur de la protection sociale.</p>
+  </section>
+  
+  <section id="service">
+    <h2>Présentation du service – Comptabilité Technique</h2>
+  
+    <p>Je me situe actuellement au <strong>4ᵉ étage de Strato</strong>, où se trouve la partie financière de Klésia, plus précisément dans le <strong>service de la comptabilité technique</strong>.</p>
+  
+    <p><strong>Nom du service :</strong> Comptabilité Technique</p>
+  
+    <p>Ce service est un pilier de la <strong>direction financière</strong> de l’entreprise. Il se distingue par sa spécialisation dans le <strong>traitement des opérations comptables courantes</strong> à travers une base de données centralisée appelée <strong>BTC (Base Technico-Comptable)</strong>, accessible via l’outil d’extraction de données <strong>SAS</strong>.</p>
+  
+    <p>La <strong>BTC</strong> regroupe l’ensemble des flux courants de Klésia : cotisations, taxes, prestations, commissions, qu’elles soient en <strong>affaires directes</strong> ou en <strong>réassurance</strong>. Ces données sont la base de toute justification des opérations de comptabilisation, d’encaissement ou de décaissement.</p>
+  
+    <p>La base est structurée selon les <strong>échéances comptables</strong> trimestrielles et annuelles. Elle est également utilisée pour les inventaires, les indexations de contrats, et tout traitement lié aux flux financiers courants.</p>
+  
+    <h3>Rôle du service</h3>
+    <ul style="font-size: 1.05rem;">
+      <li>Garantir la rigueur et la précision des <strong>comptes trimestriels et annuels</strong></li>
+      <li>Calculer, traiter, enregistrer et analyser les flux pour assurer leur conformité comptable et réglementaire</li>
+      <li>Participer à la production des <strong>états financiers</strong> : bilans, comptes de résultats, etc.</li>
+      <li>Optimiser les processus comptables par la <strong>digitalisation</strong> et l’<strong>automatisation</strong></li>
+    </ul>
+  
+    <p>Un exemple d'outil clé est <strong>BTC TOOLS</strong>, qui permet de contrôler les formats d'entrée en BTC et d’éviter les erreurs humaines. Lors d’une mission, j’ai utilisé cet outil pour valider le format d’une extraction SAS avant import. Cela m’a fait <strong>gagner du temps</strong> et a réduit le risque d’erreur.</p>
+  
+    <p>Le service collabore également avec d’autres départements : <strong>comptabilité générale, audit, contrôle de gestion, inventaire, informatique</strong>… Cette transversalité permet une <strong>gestion comptable complète et fiable</strong>.</p>
+  
+    <p><strong>Importance stratégique :</strong> Le service joue un rôle décisif dans la justification des activités de Klésia. Son expertise permet de produire des <strong>analyses utiles à la prise de décision</strong> pour la direction financière et contribue à <strong>l’optimisation des ressources</strong>.</p>
+  
+    <p>Au final, le service de comptabilité technique est bien plus qu’un service support : c’est un <strong>acteur stratégique</strong> indispensable à la <strong>performance</strong> et à la <strong>pérennité</strong> de Klésia.</p>
+  </section>
+  
+  <section id="taches">
+    <h2>Tâches accomplies</h2>
+  
+    <p>Mes missions principales dans le service de comptabilité technique consistent à <strong>construire, maintenir et exploiter la base BTC</strong>, la base de données regroupant tous les flux financiers de Klésia (cotisations, taxes, prestations, commissions), en affaires directes comme en réassurance.</p>
+  
+    <p>La BTC centralise ces flux pour justifier leur comptabilisation, leur encaissement et leur décaissement, selon un calendrier structuré autour des <strong>échéances comptables trimestrielles et annuelles</strong>. Mon travail repose également sur l’utilisation de l’<strong>outil d’extraction de données SAS</strong>.</p>
+  
+    <h3>Missions principales</h3>
+    <ul>
+      <li>Analyse de données consolidées (contrôles de cohérence)</li>
+      <li>Calcul de taxes (comme la taxe FMT)</li>
+      <li>Récupération et compilation de fichiers pour injection dans la BTC</li>
+      <li>Création de fichiers au format prestation</li>
+      <li>Rédaction de procédures de travail</li>
+    </ul>
+  
+    <h3>Tâches maîtrisées ou en cours de maîtrise</h3>
+    <ul>
+      <li>Extractions ciblées via SAS</li>
+      <li>Contrôles sur la clé comptable</li>
+      <li>Contrôle et calculs de taxes</li>
+      <li>Compilation de fichiers pour injection BTC</li>
+      <li>Contrôles de cohérence sur les données entrantes ou sortantes</li>
+    </ul>
+  
+    <h3>Exemple de mission : Calcul de la Taxe Forfait Médecin Traitant (FMT)</h3>
+    <p>Cette mission vise à calculer la taxe FMT (0,8%) sur les cotisations hors taxe santé, chaque trimestre.</p>
+    
+    <p>Je commence par une <strong>extraction de données SAS</strong>, puis je filtre les données pour ne garder que :</p>
+    <ul>
+      <li>Les affaires directes</li>
+      <li>Les modes de gestion : CP (compte propre) et SB (substitué)</li>
+      <li>Les flux : ENCAISSÉ et APP-ENC (hors SUADÉO)</li>
+      <li>La garantie : N_FMD (frais médicaux)</li>
+      <li>Les dates comptables valides (sans valeurs « N/A »)</li>
+    </ul>
+  
+    <p>Ensuite, dans <strong>Excel</strong>, je procède au calcul :</p>
+    <ul>
+      <li>Ajout d’une colonne pour appliquer la taxe de 0,8%</li>
+      <li>Identification du gestionnaire (ex : URSSAF)</li>
+      <li>Détermination du type de contrat (RESP ou NRESP) selon le taux appliqué</li>
+      <li>Formatage du fichier en « format prestation » pour l’intégration dans la BTC</li>
+    </ul>
+  
+    <h3>Utilité du calcul FMT pour Klésia</h3>
+    <ul>
+      <li><strong>Respect réglementaire :</strong> éviter les erreurs et se conformer à la législation fiscale</li>
+      <li><strong>Meilleure gestion financière :</strong> anticipation et suivi des montants à verser</li>
+      <li><strong>Fiabilité des données :</strong> garantir une comptabilité saine et auditée</li>
+      <li><strong>Analyse des contrats :</strong> meilleure connaissance du portefeuille client</li>
+      <li><strong>Optimisation :</strong> gain de temps et réduction des erreurs grâce à SAS et Excel</li>
+    </ul>
+  
+    <p>Cette mission montre l'importance de l'exactitude, de la rigueur et de la méthode dans le traitement des données comptables chez Klésia.</p>
+  </section>
+  
+
+  <section id="choix">
+    <h2>Pourquoi j'ai choisi la science des données ?</h2>
+    <p>
+      J’ai choisi la science des données car c’est un domaine qui évolue énormément et qui offre de vraies opportunités pour l’avenir. Aujourd’hui, tout tourne autour des données : les entreprises s’en servent pour prendre des décisions, améliorer leurs performances ou même anticiper des tendances. Je trouve ça impressionnant qu’on puisse partir de simples chiffres et en tirer des choses très concrètes et utiles.
+    </p>
+  
+    <p>
+      Ce que j’aime particulièrement, c’est le côté polyvalent de cette filière. On touche à la fois aux statistiques, à la programmation, à la visualisation, mais aussi à la communication. Ça me permet de ne pas faire la même chose tous les jours, d’apprendre en continu et de développer plusieurs compétences en même temps. Par exemple, en cours on utilise souvent Python, SQL ou même R, et on apprend à manipuler de vrais jeux de données, parfois très complexes.
+    </p>
+  
+    <p>
+      Je me suis souvent demandé ce que je voulais vraiment faire plus tard, et je sais aujourd’hui que je ne veux pas faire un métier où je reste passif. Je veux être utile, avoir un rôle dans les décisions d’une entreprise. Un peu comme dans le foot, où j’étais buteur : j’avais une vraie responsabilité. Là, c’est pareil : je veux pouvoir analyser, proposer, aider à prendre des décisions basées sur des faits.
+    </p>
+  
+    <p>
+      Et comme la demande augmente dans ce domaine, je me dis que c’est le bon moment pour me lancer, me former et me démarquer. Je sais que cette voie me correspond parce qu’elle est à la fois technique et stratégique, et qu’elle me pousse à toujours progresser.
+    </p>
+  </section>
+  
+
+  <section id="Projets réalisés">
+    <h2>Mes différents projets réalisés</h2>
+  
+    <h3>Projet 1 - Olympiades de l’Innovation Technologique</h3>
+    <p>Dans le cadre de la filière STI2D, j’ai participé au concours national des Olympiades de l’Innovation Technologique, organisé par l’académie de Créteil. Ce concours a pour objectif de valoriser des projets innovants réalisés par des élèves capables de travailler en équipe. Notre groupe, composé de huit élèves, a été sélectionné pour représenter notre établissement au musée de l’aéronautique Safran.</p>
+    <p>Le projet visait à améliorer la sécurité des cyclistes grâce à un sac à dos connecté. Celui-ci contenait une matrice LED pilotée par une carte Arduino, affichant des flèches lumineuses en fonction de la direction indiquée par le cycliste via un boîtier de commande fixé au guidon. Cette solution permettait d’augmenter la visibilité du cycliste, en particulier la nuit, et donc de limiter les risques d’accident.</p>
+    <p>Le développement technique a été réalisé en C++, en utilisant les bibliothèques Arduino. Nous avons dû respecter des contraintes de budget, d’ergonomie et de robustesse. Nous avons également travaillé sur l’alimentation du système, l’intégration esthétique et la validation fonctionnelle du prototype.</p>
+    <p>La soutenance s’est faite devant un jury de professionnels du groupe Safran, ce qui nous a permis d’apprendre à défendre nos choix techniques à l’oral. Ce projet m’a beaucoup appris : il m’a permis de comprendre comment appliquer mes connaissances à un besoin réel, tout en développant des compétences transversales comme le travail en groupe, la gestion de projet et la communication.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Programmation C++ avec Arduino<br>
+      – Conception électronique et câblage<br>
+      – Gestion de projet et respect d’un cahier des charges<br>
+      – Travail en équipe et communication<br>
+      – Présentation devant un jury professionnel</p>
+    <p>👉 <a href="https://www.vinci-melun.org/index.php/victoire-aux-olympiades-de-sciences-de-lingenieur-2022/" target="_blank">Voir l’article de l’Olympiade</a></p>
+  
+<hr>
+
+<h3>Projet 2 - SAÉ : Mise en œuvre d’un processus de Datamining (Prédiction de l’hypertension) S5</h3>
+
+<p>Dans cette SAÉ que l'on réalise en binôme, nous avions pour objectif de mettre en place un processus complet de datamining afin de prédire la variable <strong>Has_Hypertension</strong>, qui indique si un individu présente ou non un risque d’hypertension. Le jeu de données contenait plusieurs variables explicatives telles que l’âge (<strong>Age</strong>), l’indice de masse corporelle (<strong>BMI</strong>), la consommation de sel (<strong>Salt_Intake</strong>), le niveau de stress (<strong>Stress_Score</strong>), la durée de sommeil (<strong>Sleep_Duration</strong>), les antécédents familiaux ou personnels (<strong>BP_History</strong>, <strong>Family_History</strong>), la prise de médicaments (<strong>Medication</strong>), le statut tabagique (<strong>Smoking_Status</strong>) ou même le niveau d’activité physique (<strong>Exercise_Level</strong>).</p>
+<p>Après une phase d’exploration, de nettoyage et de préparation du jeu de données, nous avons testé plusieurs modèles de prédiction : un <strong>KNN (les k-plus proches voisins)</strong>, une <strong>régression linéaire</strong>, une <strong>régression logistique</strong> et un <strong>Random Forest</strong>. On a évalué chaque modèle à l’aide d'indicateurs adaptées comme la précision, matrice de confusion et le score F1, ce qui nous a permis de comparer leurs performances de manière rigoureuse.</p>
+<p>Parmi l’ensemble des méthodes testées, c’est le <strong>Random Forest</strong> qui a obtenu les meilleurs résultats. Ce modèle s’est montré le plus performant pour capturer les relations complexes entre les variables et prédire correctement la présence d’hypertension. Grâce à sa robustesse et sa capacité à gérer des données hétérogènes, il s’est imposé comme le choix optimal pour ce problème de classification. Sa précision s'élève a plus de 99%.</p>
+<p><strong>Bilan des compétences développées :</strong><br>
+La Compréhension et préparation d’un jeu de données médicales<br>
+L'utilisation et comparaison de plusieurs modèles de machine learning<br>
+La maîtrise des métriques de classification<br>
+L'analyse critique et justification du meilleur modèle<br>
+Et pour finir le travail en binôme et démarche complète de datamining</p>
+
+<hr>
+
+  
+    <h3>Projet 3 - SAÉ : Régression sur données médicales</h3>
+    <p>Ce projet visait à appliquer des modèles de régression sur des données réelles issues du domaine médical. Travaillant en binôme, nous avons étudié un jeu de données portant sur des tumeurs (bénignes ou malignes), avec pour objectif de déterminer les facteurs discriminants à travers des méthodes statistiques.</p>
+    <p>La première étape a consisté à nettoyer et transformer les données avec Python. Nous avons utilisé Pandas pour repérer les valeurs aberrantes, combler les valeurs manquantes, et préparer nos variables pour l’analyse. Ensuite, nous avons visualisé les corrélations entre les variables à l’aide de seaborn, et établi des hypothèses sur leur pertinence.</p>
+    <p>Nous avons testé plusieurs modèles de régression : linéaire simple, multiple, logistique. Chaque modèle a été évalué selon des critères précis (R², RMSE, matrice de confusion). Nous avons aussi testé la séparation des jeux d’apprentissage/test pour valider nos prédictions. Enfin, nous avons présenté nos résultats dans un rapport détaillé et lors d’une soutenance orale.</p>
+    <p>Ce projet m’a donné une bonne compréhension des statistiques appliquées. Il m’a aussi permis d’acquérir de l’expérience sur la modélisation avec scikit-learn et d’apprendre à vulgariser des résultats complexes pour les rendre accessibles.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Nettoyage de données médicales avec Python<br>
+      – Visualisation avec seaborn<br>
+      – Régression linéaire et logistique (modèles supervisés)<br>
+      – Évaluation des performances<br>
+      – Communication scientifique (rapport + oral)</p>
+  
+    <hr>
+  
+    <h3>Projet 4 - SAÉ : Lecture et écriture de fichiers de données</h3>
+    <p>Ce projet a marqué mon premier contact avec la manipulation de données en Python. Il s’agissait d’un exercice d’initiation à la lecture, transformation et export de fichiers dans différents formats : .TXT, .CSV principalement. L’objectif était de comprendre les étapes fondamentales du traitement des données tabulaires.</p>
+    <p>À partir d’un fichier CSV fictif (listes de personnages, villages, rangs...), nous avons utilisé la bibliothèque Pandas pour analyser les colonnes, identifier les valeurs manquantes, corriger les erreurs, filtrer les doublons et enfin produire un fichier propre. Nous avons également rédigé des fonctions pour automatiser certaines étapes du traitement.</p>
+    <p>Ce projet m’a permis de comprendre que la qualité des données est essentielle, et que les erreurs dans les jeux de données peuvent avoir un impact considérable sur les résultats finaux. J’ai aussi appris à mieux structurer mon code et à le commenter pour qu’il soit réutilisable par d’autres.</p>
+    <p>Ce fut une excellente introduction au monde de la data. Même si c’était un projet de niveau débutant, il a posé les bases nécessaires pour aborder des projets plus complexes ensuite.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Lecture/écriture de fichiers .CSV/.TXT avec Pandas<br>
+      – Nettoyage, filtrage, transformation des données<br>
+      – Écriture de fonctions Python<br>
+      – Organisation du code et documentation<br>
+      – Sensibilisation à la rigueur dans le traitement</p>
+
+
+      <hr>
+
+      <h3>Projet 5 - SAÉ : Étude de cas sur la conformité réglementaire (RGPD)</h3>
+      <p>Ce projet a été réalisé sous forme d’étude de cas pendant le deuxième semestre de ma deuxième année de BUT Science des Données. Il s’agissait d’une SAÉ dédiée à la compréhension du cadre réglementaire lié à l’usage des données personnelles, avec un focus particulier sur le RGPD (Règlement Général sur la Protection des Données).</p>
+      <p>À travers des scénarios concrets, nous avons étudié les rôles du responsable de traitement, du sous-traitant et du DPO (délégué à la protection des données). Ces cas pratiques nous ont permis de comprendre les obligations juridiques de chaque acteur dans une chaîne de traitement des données, ainsi que les droits des individus concernés (accès, rectification, effacement, portabilité…).</p>
+      <p>Nous avons également appris à repérer les risques juridiques dans la gestion des données : absence de base légale, durée de conservation trop longue, ou encore défaut d’information des utilisateurs. Ces problématiques ont été abordées dans le cadre d’un travail de groupe où chacun jouait un rôle (analyste, juriste, DPO, chef de projet).</p>
+      <p>Ce projet nous a aussi permis d’examiner des contrats de sous-traitance type, afin d’y repérer les éléments obligatoires du RGPD : clauses de sécurité, notification en cas de violation, audits réguliers, etc. Nous avons simulé la rédaction de recommandations à destination d’une entreprise pour corriger ses pratiques et garantir la conformité de ses traitements de données.</p>
+      <p>Ce travail m’a sensibilisé à l’importance de l’éthique et du cadre légal dans les projets data. Cela m’a montré qu’au-delà des compétences techniques, un bon professionnel de la donnée doit aussi savoir anticiper les risques et intégrer les règles dans sa démarche d’analyse.</p>
+      <p><strong>Bilan des compétences développées :</strong><br>
+        – Compréhension du RGPD et de ses principes clés<br>
+        – Identification des responsabilités des acteurs (responsable, DPO, sous-traitant)<br>
+        – Analyse de conformité sur des cas pratiques<br>
+        – Lecture critique de contrats de sous-traitance<br>
+        – Recommandations réglementaires dans un cadre professionnel<br>
+        – Sensibilisation à la gouvernance et à l’éthique des données</p>
+      
+      <hr>
+      <hr>
+
+<h3>Projet 6 - SAÉ : Comprendre la production de données en entreprise (cours d’économie)</h3>
+<p>Ce projet a été réalisé durant ma première année de BUT Science des Données, dans le cadre du cours d’économie appliquée. Il visait à nous faire comprendre comment les entreprises produisent et gèrent leurs propres données en interne, et pourquoi ces données sont essentielles dans leur fonctionnement et leur prise de décision.</p>
+
+<p>Nous avons étudié des cas concrets d’entreprises (fictives ou réelles) et analysé les différentes sources de données internes : données clients (CRM), données de production, données comptables, données RH, etc. Le but était de comprendre d’où viennent ces données, comment elles circulent dans les services, et comment elles sont exploitées par les managers et les analystes.</p>
+
+<p>À travers différents exemples, nous avons observé que la production de données ne se limite pas à la collecte automatique : elle peut aussi dépendre de la saisie humaine, de systèmes informatiques intégrés (ERP), ou même de documents papier numérisés. Cela soulève des problématiques de fiabilité, de mise à jour, et de cohérence entre services.</p>
+
+<p>Nous avons également vu que ces données sont à la base de nombreuses décisions stratégiques en entreprise : pilotage des ventes, optimisation des stocks, gestion des effectifs, suivi de la performance, etc. Il est donc crucial que leur qualité soit assurée dès leur création, et que les processus de traitement soient clairs et bien définis.</p>
+
+<p>Ce projet m’a permis d’avoir une vision globale du cycle de la donnée, depuis sa création jusqu’à son utilisation finale. J’ai compris que l’analyse de données commence bien avant la partie "technique", et qu’elle dépend fortement du contexte organisationnel dans lequel les données sont produites. Cette prise de recul est essentielle pour devenir un bon professionnel de la data.</p>
+
+<p><strong>Bilan des compétences développées :</strong><br>
+  – Identification des sources de données internes en entreprise<br>
+  – Compréhension des flux d’information et des services concernés<br>
+  – Sensibilisation à la qualité des données dès leur création<br>
+  – Mise en relation entre données et prise de décision<br>
+  – Approche économique et organisationnelle des systèmes d’information<br>
+  – Analyse critique de la structure des données dans un contexte réel</p>
+
+<hr>
+
+   <hr>
+  
+    <h3>Projet 7 - SAÉ : Mise en en place et conception d'un SGBDR</h3>
+    <p>Ce projet de fin de semestre 2 avait pour but de concevoir et d’implémenter une base de données relationnelle sur le thème des festivals. Travaillant en trinôme, nous avons suivi toutes les étapes d’un cycle de gestion de données : nettoyage, modélisation, intégration, interrogation et visualisation.</p>
+    <p>Nous avons d’abord nettoyé les données fournies au format CSV à l’aide de Python et Pandas, puis nous avons conçu un modèle entité-association (E/A) pour structurer les informations. Une fois les relations et les dépendances bien définies, nous avons transformé ce modèle en schéma relationnel, normalisé jusqu’à la 3NF pour garantir cohérence et efficacité.</p>
+    <p>La base a ensuite été implémentée via SQL (PostgreSQL), avec création manuelle des tables, clés primaires et étrangères. Nous avons inséré les données, puis rédigé plusieurs requêtes complexes pour extraire des statistiques pertinentes (par région, par type de festival, etc.). Enfin, nous avons utilisé Metabase pour produire des visualisations dynamiques et compréhensibles.</p>
+    <p>Ce projet m’a beaucoup appris sur la structuration des données, la logique des bases relationnelles et l’importance de la modélisation. Il m’a permis d’approfondir SQL et de découvrir les enjeux de la visualisation dans une démarche orientée utilisateur.</p>
+    <p><strong>Bilan des compétences développées :</strong><br>
+      – Nettoyage et structuration de données tabulaires<br>
+      – Modélisation E/A et schéma relationnel<br>
+      – SQL (requêtes, jointures, normalisation)<br>
+      – Création de dashboards sous Metabase<br>
+      – Travail en trinôme et organisation</p>
+  
+    <hr>
+
+<section id="Mes compétences techniques">
+  <h2>Mes compétences techniques</h2>
+  <p>Grâce à mes études en Science des Données et mes expériences en projet comme en entreprise, j’ai pu développer une palette d’outils essentiels à l’analyse, la visualisation et la gestion des données :</p>
+  
+  <ul style="list-style: none; padding-left: 0; font-size: 1.1rem;">
+  <li><strong> SQL :</strong> requêtes, jointures, filtrage, création de bases de données relationnelles.</li>
+  <li><strong>🐍 Python :</strong> analyse et visualisation de données (Pandas, Seaborn, Scikit-learn).</li>
+  <li><strong>📊 Metabase :</strong> création de dashboards interactifs, visualisation automatisée de données.</li>
+  <li><strong>📈 R :</strong> analyse statistique, modélisation, graphiques avec ggplot2.</li>
+  <li><strong> Excel :</strong> tableaux croisés dynamiques, formules avancées, automatisation avec macros.</li>
+  <li><strong>📊 Power BI :</strong> connexion à différentes sources, rapports dynamiques, storytelling visuel.</li>
+  </ul>
+  
+  <p>Ces outils me permettent de travailler efficacement sur toutes les étapes d’un projet data, de la collecte à la restitution visuelle et stratégique.</p>
+  </section>
+
+<hr>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Vous pouvez me contacter facilement via les moyens suivants :</p>
+  <ul style="list-style: none; padding-left: 0; font-size: 1.1rem;">
+    <li><strong>📧 Email :</strong> <a href="mailto:Dramanekm12@gmail.com" style="color: var(--orange); text-decoration: none;">Dramanekm12@gmail.com</a></li>
+    <li><strong>📞 Téléphone :</strong> <a href="tel:+3371223345647" style="color: var(--orange); text-decoration: none;">+33 7 12 23 34 56</a></li>
+    <li><strong>💼 LinkedIn :</strong> <a href="https://www.linkedin.com/in/dramane-k-9429aa2ba" target="_blank" style="color: var(--orange); text-decoration: none;">linkedin.com/in/dramane-k-9429aa2ba</a></li>
+  </ul>
+</section>
+
+<hr>
+
+
+  </section>
+
+  <div style="text-align:center; margin:3rem 0;">
+    <a href="#top" 
+       style="display:inline-block; padding:10px 20px; background:black; color:white; 
+              border-radius:8px; text-decoration:none; font-weight:bold; transition:0.2s;">
+        ⬆️ Remonter en haut
+    </a>
+</div>
+
+
+  <footer>
+    <p>© 2025 Dramane Kamate - Contact : dramanekm12@gmail.com</p>
+  </footer>
+</body>
+</html>
